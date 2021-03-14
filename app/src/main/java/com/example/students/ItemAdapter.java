@@ -13,8 +13,10 @@ public class ItemAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<Student> students;
-    public ItemAdapter(Context context, ArrayList<Student> students){
-        this.context = context;this.students = students;
+
+    public ItemAdapter(Context context, ArrayList<Student> students) {
+        this.context = context;
+        this.students = students;
     }
 
     @Override
@@ -34,13 +36,13 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.listview_layout_item,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.listview_layout_item, parent, false);
         }
         Student currentStudent = (Student) getItem(position);
-        TextView textViewItemName = (TextView)convertView.findViewById(R.id.item_name);
+        TextView textViewItemName = (TextView) convertView.findViewById(R.id.item_name);
         textViewItemName.setText(currentStudent.studentName);
-        TextView textViewItemClassification = (TextView)convertView.findViewById(R.id.item_group);
+        TextView textViewItemClassification = (TextView) convertView.findViewById(R.id.item_group);
         textViewItemClassification.setText(currentStudent.studentPhone);
         return convertView;
     }
